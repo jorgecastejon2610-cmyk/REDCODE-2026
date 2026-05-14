@@ -1,2 +1,3 @@
 # REDCODE-2026
-Team for Future Engineers
+Equipo para la competencia Futuros ingenieros en representación de un equipo del Liceo Los Robles
+Venezuela, Zulia, Maracaibo
