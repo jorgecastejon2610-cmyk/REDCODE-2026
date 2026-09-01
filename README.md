@@ -11,8 +11,8 @@ Este repositorio contiene todos los materiales necesarios para crear "Jimbo", el
 1. Documento de Ingeniería / REDCODE
 2. Miembros de REDCODE
    2.1 Andrés Matos
-   2.2 Jorge Castejón
-   2.3 Victor Boscan
+2.2 Jorge Castejón
+2.3 Victor Boscan
 3. Etapas de Desarrollo (Versiones anteriores del robot)
 4. Fotos del Robot
 5. Diseño Mecánico
