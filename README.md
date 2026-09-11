@@ -1,3 +1,6 @@
+<img width="500" height="500" alt="image-removebg-preview" src="https://github.com/user-attachments/assets/2a019ebf-dbdc-4fd9-bb43-110b1ea4b76e" />
+
+
 # WRO Futuros Ingenieros 2026 — Equipo REDCODE
 
 ---
