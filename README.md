@@ -135,6 +135,9 @@ Posteriormente programamos el firmware en Python usando Zitronik, desarrollando 
 3. Conectar la tarjeta BBC micro:bit al computador mediante el cable USB.
 4. Flashear y transferir la rutina Python cargada directamente a la tarjeta.
 
+<img width="960" height="1280" alt="foto 3" src="https://github.com/user-attachments/assets/96fa9633-75de-42ad-a84f-dd72c8638346" />
+
+
 ---
 
 ## Estructura del Repositorio
@@ -172,3 +175,5 @@ Posteriormente programamos el firmware en Python usando Zitronik, desarrollando 
 ---
 
 **Desarrollado por el Equipo REDCODE para la WRO 2026.**
+
+<img width="300" height="362" alt="logo-pie-2" src="https://github.com/user-attachments/assets/53826668-2dac-4a69-8642-56ec9496b9e1" />
