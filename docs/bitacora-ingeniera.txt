@@ -1,0 +1,31 @@
+Bitácora de Ingeniería — Equipo REDCODE
+Categoría WRO Futuros Ingenieros 2026
+
+Proyecto Vehículo Autónomo LEGO con micro:bit y Triangulación Ultrasónica
+
+Institución Liceo Los Robles | Maracaibo, Venezuela
+
+Registro de Desarrollo por Semanas
+Semana 1 — Evaluación de Requerimientos y Diseño Base LEGO
+Analizamos el reglamento oficial de la WRO 2026 para la categoría Futuros Ingenieros y establecimos las restricciones físicas y operativas del robot. Construimos el chasis inicial utilizando vigas y conectores LEGO Technic, enfocado en alojar el microcontrolador BBC micro:bit y la placa de expansión en el centro geométrico para mantener el peso repartido de forma pareja entre ambos ejes.
+
+Semana 2 — Mecanismo de Dirección y Tren Motriz
+Diseñamos el sistema de giro para el par de ruedas delanteras acoplando el micro servomotor LEGO Technic a un enlace de dirección rígido. En la parte posterior montamos el motor DC conectado al par de ruedas traseras. Durante las primeras pruebas mecánicas corregimos la holgura en el eje delantero agregando puntos de soporte dobles con vigas de refuerzo para garantizar alineación precisa en rectas.
+
+Semana 3 — Montaje Electrónico y Triangulación Ultrasónica
+Ubicamos los tres sensores de ultrasonido HC-SR04 en la estructura frontal del robot. Posicionamos un sensor mirando directamente al frente a 0° y los otros dos inclinados hacia la izquierda y derecha para cubrir las paredes del carril. Conectamos los pines de señal y alimentación a la placa de expansión del micro:bit y organizamos el cableado con clips LEGO para evitar enganches con las ruedas.
+
+Semana 4 — Entorno Zitronik y Calibración Física de Sensores
+Configuramos el entorno de desarrollo Zitronik Python y realizamos las primeras lecturas de prueba con la micro:bit. Notamos que los sensores leían valores erróneos debido a la cercanía con el suelo. Resolvimos el inconveniente elevando la base de los sensores en la estructura LEGO y ajustando su posición con un ángulo levemente elevado respecto a la superficie de la pista.
+
+Semana 5 — Desarrollo del Código Base en Python
+Escribimos las rutinas de adquisición de datos en Python dentro de Zitronik para procesar la distancia enviada por los tres sensores sin pausar la ejecución del programa. Notamos pequeñas fluctuaciones de milisegundos en la señal de los ultrasonidos, por lo que creamos un filtro en el código que calcula el promedio de las lecturas continuas para filtrar picos falsos antes de enviar comandos a los motores.
+
+Semana 6 — Lógica de Centrado y Control Proporcional
+Programamos el algoritmo de navegación centrado en el diferencial de lectura entre el sensor izquierdo y el derecho. Definimos la fórmula de error para enviar correcciones de ángulo directamente al servo delantero. En las primeras pasadas el robot reaccionaba con brusquedad, por lo que fuimos calibrando la constante proporcional Kp hasta lograr que el vehículo corrigiera la trayectoria de forma suave sin salirse del carril.
+
+Semana 7 — Integración del Sensor Frontal y Desaceleración
+Añadimos la lógica de seguridad vinculada al sensor frontal para la detección de paredes u obstáculos a distancia corta. Programamos una función en Python que reduce de forma automática la potencia del motor trasero al aproximarse a una esquina, permitiendo que el servo ejecute el viraje completo con mayor agarre en el eje trasero sin volcar por inercia.
+
+Semana 8 — Pruebas en Pista Oficial WRO y Ajuste Final
+Sometimos el robot a recorridos continuos en el circuito reglamentario de la WRO 2026. Medimos el consumo energético, la velocidad promedio en rectas y la efectividad en esquivas consecutivas. Terminamos de ajustar las constantes en el script de Python en Zitronik y dejamos la versión definitiva del programa lista para competir de manera 100% autónoma.
