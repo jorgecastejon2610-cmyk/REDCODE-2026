@@ -1,8 +1,4 @@
-
-```text
 # 🏎️ WRO Futuros Ingenieros 2026 — Equipo REDCODE
-
-```
 
 ---
 
@@ -77,7 +73,7 @@ Para maximizar el rendimiento y la consistencia en pista, REDCODE basó el desar
 
 El programa se ejecuta dentro de un bucle de alta velocidad en la micro:bit encargándose del monitoreo sensorial constante.
 
-```
+```text
                   [ Lectura de 3 Sensores de Ultrasonido ]
                                      │
             ┌────────────────────────┼────────────────────────┐
@@ -104,9 +100,11 @@ El programa se ejecuta dentro de un bucle de alta velocidad en la micro:bit enca
 
 El centrado del vehículo entre las paredes del circuito se logra evaluando la diferencia de lecturas entre el sensor izquierdo y el derecho:
 
-$$\text{Error} = \text{Distancia Left} - \text{Distancia Right}$$
+```text
+Error = Distancia_Izquierda - Distancia_Derecha
+Angulo_Direccion = Centro + (Kp * Error) + (Kd * Delta_Error)
 
-$$\text{Ángulo Dirección} = \text{Centro} + (K_p \cdot \text{Error}) + \left(K_d \cdot \frac{\Delta \text{Error}}{\Delta t}\right)$$
+```
 
 * **Sensor Frontal:** Actúa como gatillo de seguridad. Si detecta un obstáculo a menos de la distancia crítica, activa la rutina de evasión o viraje cerrado.
 * **Sensores Laterales:** Mantienen el robot equilibrado en el centro del carril corregido suavemente por las ruedas delanteras.
@@ -177,7 +175,3 @@ El desarrollo de REDCODE se dividió en fases documentadas en `/docs/bitacora-in
 ---
 
 **Desarrollado por el Equipo REDCODE para la WRO 2026. 🚀**
-
-```
-
-```
