@@ -13,6 +13,9 @@
 
 *Figura 1. Demostración en pista del vehículo autónomo LEGO de REDCODE ejecutando la navegación reactiva y esquiva de obstáculos según la normativa WRO 2026.*
 
+<img width="960" height="1280" alt="foto 1" src="https://github.com/user-attachments/assets/270e4f0f-9379-4c75-b120-6f441b3ba24b" />
+
+
 ---
 
 ## Tabla de Contenidos
@@ -62,6 +65,9 @@ En el apartado lógico, todo el código fue programado en Python desde la plataf
 
 
 *Figura 2. Esquema de conexiones de los sensores ultrasónicos y actuadores con la micro:bit.*
+
+<img width="960" height="1280" alt="foto 2" src="https://github.com/user-attachments/assets/b732090d-2a54-49ed-a90b-3850d31cb34b" />
+
 
 ---
 
