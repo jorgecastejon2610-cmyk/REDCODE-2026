@@ -3,15 +3,15 @@
 ---
 
 > **Equipo REDCODE**
-> 🏫 **Institución / Club:** Liceo Los Robles
+> 🏫 **Institución:** Liceo Los Robles
 > 🌍 **País:** Venezuela
-> 👥 **Categoría:** Futuros Ingenieros (Future Engineers) — WRO 2026
+> 👥 **Categoría:** Futuros Ingenieros — WRO 2026
 
 ---
 
 
 
-*Figura 1: Demostración del vehículo autónomo LEGO del equipo REDCODE realizando la navegación y esquiva dinámica de obstáculos según la normativa oficial de la WRO 2026.*
+*Figura 1: Demostración en pista del vehículo autónomo LEGO de REDCODE ejecutando la navegación reactiva y esquiva de obstáculos según la normativa WRO 2026.*
 
 ---
 
@@ -31,54 +31,53 @@
 
 ## 📌 Resumen Ejecutivo
 
-El presente repositorio alberga la documentación de ingeniería, modelos de construcción LEGO, diagramas de conexión y código fuente del vehículo robótico autónomo desarrollado por el equipo **REDCODE** para la categoría **Futuros Ingenieros (WRO 2026)**.
+Este repositorio reúne toda la documentación técnica, esquemas de montaje LEGO, código fuente y pruebas en pista desarrolladas por el equipo **REDCODE** para competir en la categoría **Futuros Ingenieros WRO 2026**.
 
-Nuestra solución utiliza una placa controlador **BBC micro:bit** integrada en un chasis modular fabricado con elementos **LEGO**. El vehículo cuenta con un sistema de tracción y dirección basado en dos pares de ruedas (delanteras y traseras) y un arreglo tripartito de sensores de ultrasonido (frontal, izquierdo y derecho) que permiten la navegación precisa entre paredes y la evasión efectiva de obstáculos.
+Nuestra propuesta se basa en un vehículo robótico autónomo impulsado por la tarjeta **BBC micro:bit** sobre una estructura modular de piezas **LEGO**. El sistema utiliza un tren de rodaje de cuatro ruedas distribuidas en dos pares, con las delanteras para la dirección y las traseras para la tracción, apoyado por un arreglo de tres sensores de ultrasonido para calcular distancias, centrarse en el carril y esquivar barreras en tiempo real.
 
 ---
 
 ## ⚙️ Principios de Diseño e Ingeniería
 
-Para maximizar el rendimiento y la consistencia en pista, REDCODE basó el desarrollo del robot en cuatro pilares fundamentales:
+Para asegurar que el vehículo responda de manera constante y ágil durante la competencia, enfocamos el desarrollo en cuatro pilares:
 
-1. **Estructura Modular LEGO:** Construcción robusta y de fácil mantenimiento, optimizada para mantener una distribución equitativa del peso sobre los ejes delantero y trasero.
-2. **Triangulación Ultrasónica:** Distribución estratégica de 3 sensores de ultrasonido para cobertura de 180° en el frente y laterales, eliminando puntos ciegos.
-3. **Eficiencia en Microcontrolador:** Procesamiento directo en la placa micro:bit priorizando tiempos de respuesta inmediatos sin sobrecargar la memoria del procesador.
-4. **Navegación Reactiva Suave:** Control proporcional para ajustar la velocidad y el ángulo de viraje en tiempo real según las lecturas diferenciales de distancia.
+1. **Estructura Modular LEGO:** Un chasis ligero y fácil de ajustar en boxes, optimizado para repartir el peso de forma equilibrada entre ambos ejes.
+2. **Triangulación Ultrasónica:** Posicionamiento de tres sensores en abanico para cubrir un ángulo de 180° al frente y en los costados, eliminando puntos ciegos.
+3. **Optimización en micro:bit:** Código directo y eficiente en la placa para procesar datos sensoriales al instante sin saturar el microcontrolador.
+4. **Respuesta Proporcional:** Ajustes continuos de velocidad y ángulo de dirección basados en la diferencia de lectura entre paredes para lograr curvas fluidas.
 
 ---
 
 ## 🛠️ Arquitectura de Hardware
 
-### Lista de Materiales y Componentes (BOM)
+### Lista de Materiales y Componentes
 
-| Categoría | Subsistema / Componente | Modelo / Especificación | Función y Justificación Técnica |
+| Categoría | Componente | Especificación Técnica | Función en el Vehículo |
 | --- | --- | --- | --- |
-| **Controlador** | Microcontrolador | BBC micro:bit (v2) | Procesador principal, gestión de lógica y lectura de sensores. |
-| **Placa de Expansión** | Driver / Módulo I/O | Módulo de expansión para micro:bit | Distribución de puertos GPIO y alimentación dedicada para servomotores y motores. |
-| **Sensores** | Medición de Distancia | 3x Sensores de Ultrasonido (HC-SR04 / LEGO) | Cobertura tripartita: Sensor Izquierdo, Sensor Frontal y Sensor Derecho. |
-| **Actuador Dirección** | Servomotor / Motor | Servo Micro / Motor LEGO Technic | Control del ángulo de dirección en el par de ruedas delanteras. |
-| **Potencia Motriz** | Motor de Tracción | Motor DC / Motor LEGO Technic | Tracción del par de ruedas traseras para propulsión y reversa. |
-| **Estructura** | Chasis y Transmisión | Componentes LEGO Technic | Chasis, engranajes, soportes de sensores y tren motriz. |
-| **Ruedas** | Rodamiento | 2 Pares de Ruedas LEGO | Par delantero (dirección) y par trasero (tracción) de alto agarre. |
-| **Energía** | Alimentación | Batería / Porta Baterías dedicado | Suministro continuo de voltaje regulado a la placa y actuadores. |
+| **Controlador** | Microcontrolador | BBC micro:bit v2 | Procesamiento de la lógica y gestión de puertos de entrada y salida |
+| **Expansión** | Placa de Expansión | Expansion Shield para micro:bit | Interfaz física para sensores y señal hacia motores |
+| **Sensores** | Medición de Distancia | 3 Sensores de Ultrasonido HC-SR04 | Cobertura en tres frentes: Sensor Izquierdo, Sensor Frontal y Sensor Derecho |
+| **Dirección** | Actuador Servo | Micro Servomotor LEGO Technic | Control del ángulo de giro en el par de ruedas delanteras |
+| **Tracción** | Motor Principal | Motor DC LEGO Technic | Impulso del par de ruedas traseras para el avance y retroceso |
+| **Estructura** | Chasis | Piezas LEGO Technic | Conformación del chasis, soportes de sensores y tren motriz |
+| **Ruedas** | Rodamiento | 2 Pares de Ruedas LEGO | Par delantero para dirección y par trasero para tracción de alto agarre |
 
 
 
-*Figura 2: Diagrama de conexiones eléctricas y sensores de ultrasonido con la micro:bit del equipo REDCODE.*
+*Figura 2: Esquema de conexiones de los sensores ultrasónicos y actuadores con la micro:bit.*
 
 ---
 
 ## 💻 Arquitectura de Software y Lógica
 
-El programa se ejecuta dentro de un bucle de alta velocidad en la micro:bit encargándose del monitoreo sensorial constante.
+La micro:bit ejecuta un bucle de alta velocidad que lee constantemente los datos del entorno y toma decisiones sobre la tracción y el viraje:
 
 ```text
                   [ Lectura de 3 Sensores de Ultrasonido ]
                                      │
             ┌────────────────────────┼────────────────────────┐
             ▼                        ▼                        ▼
- [Sensor Izquierdo (cm)]   [Sensor Frontal (cm)]    [Sensor Derecho (cm)]
+ [Sensor Izquierdo cm]     [Sensor Frontal cm]      [Sensor Derecho cm]
             │                        │                        │
             └────────────────────────┼────────────────────────┘
                                      ▼
@@ -86,7 +85,7 @@ El programa se ejecuta dentro de un bucle de alta velocidad en la micro:bit enca
                                      │
                ┌─────────────────────┴─────────────────────┐
                ▼                                           ▼
- [Control PID de Dirección (Eje Frontal)]      [Ajuste de Velocidad (Eje Trasero)]
+ [Control PID de Dirección Eje Frontal]        [Ajuste de Velocidad Eje Trasero]
                │                                           │
                └─────────────────────┬─────────────────────┘
                                      ▼
@@ -98,43 +97,43 @@ El programa se ejecuta dentro de un bucle de alta velocidad en la micro:bit enca
 
 ## 🎯 Estrategia de Navegación y Control PID
 
-El centrado del vehículo entre las paredes del circuito se logra evaluando la diferencia de lecturas entre el sensor izquierdo y el derecho:
+Para mantener el robot centrado en el circuito, el programa calcula continuamente la diferencia entre el sensor izquierdo y el derecho:
 
 ```text
 Error = Distancia_Izquierda - Distancia_Derecha
-Angulo_Direccion = Centro + (Kp * Error) + (Kd * Delta_Error)
+Angulo_Direccion = Centro + Kp * Error + Kd * Delta_Error
 
 ```
 
-* **Sensor Frontal:** Actúa como gatillo de seguridad. Si detecta un obstáculo a menos de la distancia crítica, activa la rutina de evasión o viraje cerrado.
-* **Sensores Laterales:** Mantienen el robot equilibrado en el centro del carril corregido suavemente por las ruedas delanteras.
+* **Sensor Frontal:** Sirve como barrera de seguridad. Cuando la distancia frontal cae por debajo del umbral de peligro, el vehículo reduce velocidad o inicia la maniobra de esquiva.
+* **Sensores Laterales:** Guían las correcciones finas del eje delantero para mantener la trayectoria en el centro del carril.
 
 ---
 
 ## 📓 Bitácora de Desarrollo e Iteraciones
 
-El desarrollo de REDCODE se dividió en fases documentadas en `/docs/bitacora-ingenieria.md`:
+Documentamos todo el proceso de construcción, pruebas y fallos en el archivo `docs/bitacora-ingenieria.md`:
 
-* **Fase 1 — Diseño del Chasis LEGO:** Ajuste del marco de componentes, alineación de las ruedas delanteras y traseras.
-* **Fase 2 — Montaje Sensorial:** Calibración de la altura y posición de los 3 sensores ultrasónicos para evitar falsos rebotes con el suelo.
-* **Fase 3 — Programación en micro:bit:** Implementación del código de lectura continua y filtrado de ruido en los sensores.
-* **Fase 4 — Pruebas de Pista WRO 2026:** Ajuste de constantes del algoritmo de dirección y pruebas de recorrido continuo.
+* **Fase 1 — Diseño del Chasis LEGO:** Construcción de la base física, alineación de las ruedas delanteras y ajuste del eje de tracción trasero.
+* **Fase 2 — Montaje Sensorial:** Ubicación y ajuste de altura de los tres sensores de ultrasonido para evitar falsas lecturas con el suelo.
+* **Fase 3 — Programación en micro:bit:** Creación del código de adquisición de datos y filtro de ruido para estabilizar las lecturas.
+* **Fase 4 — Pruebas de Campo:** Ajuste de las constantes de dirección y pruebas de recorrido continuo en la pista de la WRO 2026.
 
 ---
 
 ## 🚀 Guía de Instalación y Carga del Código
 
-### Requisitos Previos
+### Entorno Sugerido
 
-* **Entorno de Desarrollo:** MakeCode para micro:bit / Python para micro:bit
+* **Plataforma:** MakeCode para micro:bit o editor Python micro:bit
 * **Conexión:** Cable USB a micro USB
 
-### Pasos para Cargar el Programa
+### Pasos para Cargar
 
-1. Abre el entorno de desarrollo de micro:bit.
-2. Importa el archivo principal localizado en `/src/main.hex` (o `/src/main.py`).
-3. Conecta tu placa **BBC micro:bit** al computador mediante el cable USB.
-4. Descarga y transfiere el archivo directamente a la unidad de la micro:bit.
+1. Abre el entorno de programación para micro:bit.
+2. Importa el archivo principal alojado en `src/main.hex` o `src/main.py`.
+3. Conecta la tarjeta BBC micro:bit al computador mediante el cable USB.
+4. Presiona la opción Descargar y transfiere el archivo compilado a la unidad de la tarjeta.
 
 ---
 
@@ -164,13 +163,13 @@ El desarrollo de REDCODE se dividió en fases documentadas en `/docs/bitacora-in
 
 ### Equipo REDCODE
 
-* **Andrés Matos** — *Líder de Software y Programación micro:bit*
-* **[Nombre Integrante 2]** — *Diseñador Mecánico y Ensamblador LEGO*
-* **[Nombre Integrante 3]** — *Especialista en Electrónica y Calibración de Sensores*
+* **Andrés Matos** — Líder de Software y Programación micro:bit
+* **Jorge Castejón** — Diseñador Mecánico y Ensamblador LEGO
+* **Victor Boscan** — Especialista en Electrónica y Calibración de Sensores
 
-### Entrenador / Mentor
+### Mentor
 
-* **[Nombre del Coach/Tutor]** — *Mentor Técnico y Asesor de Proyecto*
+* **Lic. Jose Escalona** — Mentor y Asesor de Proyecto
 
 ---
 
