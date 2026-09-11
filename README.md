@@ -1,4 +1,16 @@
-# REDCODE-2026
+
+# WRO Futuros Ingenieros 2026 - Equipo REDCODE
+
+![WRO Category](https://img.shields.io/badge/WRO-Futuros_Ingenieros_2026-blue)
+![License](https://img.shields.io/badge/Licencia-MIT-green)
+![Build](https://img.shields.io/badge/Estado-Completado-brightgreen)
+
+> **Equipo REDCODE**  
+> *Institución / Club de Robótica:* [Liceo Los Robles]  
+> *País:* [Venezuela]
+
+![Demostración en Pista](docs/media/demostracion-pista.gif)
+*Figura 1: Vehículo autónomo de REDCODE completando el recorrido oficial de la WRO 2026.*
 Repositorio para el equipo para la competencia Futuros ingenieros en representación de un equipo del Liceo Los Robles
 Venezuela, Zulia, Maracaibo.
 Este repositorio contiene todos los materiales necesarios para crear "Jimbo", el robot autónomo construido por el equipo REDCODE, con el objetivo de participar en la categoría Futuros Ingenieros en las diferentes etapas de la WRO Venezuela, en su edición 2026.
